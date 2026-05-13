@@ -33,6 +33,29 @@
         nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
+        /* Updated Hero Section for hero-bg.png */
+        .hero {
+            position: relative;
+            background: url('hero-bg.png'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px; /* ڈیسک ٹاپ کے لیے بہترین ہائٹ */
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            border-bottom: 5px solid var(--gold);
+        }
+
+        /* Responsive Settings for Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                height: 300px; /* موبائل اسکرین کے مطابق ایڈجسٹمنٹ */
+                background-size: contain; /* تاکہ تصویر کا کوئی حصہ کٹے نہیں */
+                background-color: #0d3121; /* تصویر کے پیچھے ہم آہنگ رنگ */
+            }
+        }
 
         /* Section Styling */
         .section-header {
@@ -104,61 +127,9 @@
         </nav>
     </header>
 
-    <style>
-    .hero {
-        position: relative;
-        background: radial-gradient(circle at center, #1a4332 0%, #0a2e1f 100%);
-        height: 420px;
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        text-align: center;
-        border-bottom: 5px solid #c5a059;
-    }
-    .hero::before {
-        content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-        background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');
-        opacity: 0.1; pointer-events: none;
-    }
-    .logo-only-box { position: relative; z-index: 2; display: inline-block; }
-    .arch-wrap {
-        border: 3px solid #c5a059;
-        border-radius: 500px 500px 0 0;
-        padding: 25px 60px 15px;
-        border-bottom: 3px solid #c5a059;
-        margin-bottom: 18px;
-        display: inline-block;
-    }
-    .arabic-font { 
-        font-family: 'Amiri', serif; 
-        font-size: clamp(3.2rem, 13vw, 5.8rem); 
-        color: #c5a059; 
-        line-height: 1;
-    }
-    .english-font { 
-        font-family: 'Cinzel', serif; 
-        font-size: clamp(1.3rem, 5.5vw, 2.5rem); 
-        color: white; 
-        letter-spacing: 5px; 
-        font-weight: bold;
-        text-transform: uppercase;
-        display: block;
-    }
-    @media (max-width: 600px) {
-        .hero { height: 350px; }
-        .arch-wrap { padding: 15px 35px 10px; }
-    }
-</style>
-
-<section class="hero">
-    <div class="logo-only-box">
-        <div class="arch-wrap">
-            <div class="arabic-font">عزیز المدارس</div>
-        </div>
-        <div class="english-font">AZIZ-UL-MADARIS</div>
-    </div>
-</section>
-
+    <!-- Updated Hero Section: Content is now inside the background image -->
+    <section class="hero" id="home">
+    </section>
 
     <div id="about">
         <div class="section-header">About Us / تعارف</div>
@@ -172,7 +143,6 @@
     <div id="library">
         <div class="section-header">Digital Library / لائبریری</div>
         <div class="grid-container">
-            <!-- Example Books -->
             <div class="item-card">
                 <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" alt="Book">
                 <h4>نصابی کتاب 1</h4>
