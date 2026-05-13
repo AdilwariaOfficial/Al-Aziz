@@ -3,126 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aziz-ul-Madaris | Official</title>
+    <title>Madrasa Aziz-ul-Madaris | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <style>
-        :root { --deep-green: #0a2e1f; --gold: #c5a059; --white: #ffffff; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #fdfcf9; overflow-x: hidden; }
+        :root {
+            --deep-green: #0a2e1f;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --soft-bg: #fdfcf9;
+        }
 
-        /* Navbar */
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--soft-bg); color: #333; overflow-x: hidden; }
+
+        /* Header */
         header {
-            background-color: var(--deep-green); padding: 12px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
+            background-color: var(--deep-green);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            position: sticky; top: 0; z-index: 1000;
         }
-        nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; margin-left: 10px; text-transform: uppercase; }
+        .header-logo { color: var(--gold); display: flex; align-items: center; text-decoration: none; font-size: 11px; font-weight: bold; }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+        nav a { color: var(--white); text-decoration: none; font-size: 8px; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
 
-        /* Hero Section (Exactly like 75935.png) */
+        /* Hero Section with Embedded Pattern (No Link Needed) */
         .hero {
-            background-color: var(--deep-green); height: 500px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            position: relative; text-align: center;
-            background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png'); /* Pattern like 75935.png */
+            background-color: var(--deep-green);
+            background-image: radial-gradient(circle at 2px 2px, var(--gold) 1px, transparent 0);
+            background-size: 24px 24px;
+            background-blend-mode: overlay;
+            height: 380px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            position: relative;
         }
-        .logo-frame {
-            border: 3px solid var(--gold); border-bottom: none;
-            border-radius: 150px 150px 0 0; padding: 20px 50px;
-            background: rgba(0,0,0,0.1); display: inline-block;
-        }
-        .hero h1 { font-family: 'Amiri', serif; font-size: 70px; color: var(--gold); margin: 0; line-height: 1; }
-        .hero h2 { font-family: 'Cinzel', serif; font-size: 30px; color: white; margin: 10px 0 0; letter-spacing: 4px; }
-
-        /* Glossy Info Bar (75935.png Style) */
-        .info-bar {
-            position: absolute; bottom: 40px; width: 90%; max-width: 900px;
-            background: linear-gradient(to bottom, #111, #000);
-            border: 1px solid #333; border-radius: 50px;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-        }
-        .loc-text { color: white; font-size: 14px; display: flex; align-items: center; gap: 8px; }
-        .loc-text i { color: var(--gold); }
-        .mudir-text { font-family: 'Noto Nastaliq Urdu', serif; color: var(--gold); font-size: 16px; display: flex; align-items: center; gap: 10px; direction: rtl; }
-        .mudir-text i { color: white; font-size: 20px; }
-
-        /* Sections */
-        .section-header { background: linear-gradient(90deg, var(--deep-green), transparent); color: var(--gold); padding: 10px 20px; margin: 40px 0 20px 5%; border-left: 5px solid var(--gold); font-weight: bold; }
-        .content { padding: 0 5% 40px; }
-        .urdu-txt { font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; text-align: right; line-height: 2; }
         
-        /* Grids for Library, Courses, AI */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
-        .btn { background: var(--deep-green); color: var(--gold); text-decoration: none; padding: 8px; border-radius: 5px; display: block; font-size: 12px; border: 1px solid var(--gold); margin-top: 5px; }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(10,46,31,0.5), var(--deep-green));
+        }
 
-        footer { background: var(--deep-green); color: var(--gold); padding: 30px; text-align: center; border-top: 3px solid var(--gold); }
+        .arabic-logo { 
+            font-family: 'Amiri', serif; font-size: clamp(2.5rem, 9vw, 4.5rem); color: var(--gold); 
+            border: 2px solid var(--gold); padding: 8px 30px; border-radius: 50px 50px 0 0; 
+            background: rgba(0,0,0,0.6); text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+            z-index: 2; position: relative;
+        }
+        .english-title { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 4vw, 1.6rem); color: white; letter-spacing: 2px; margin-top: 8px; z-index: 2; position: relative; }
+
+        /* Section Styling */
+        .section-header {
+            background: linear-gradient(90deg, var(--deep-green), transparent);
+            color: var(--gold);
+            padding: 8px 18px;
+            display: table;
+            margin: 30px 0 15px 5%;
+            border-left: 5px solid var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .about-box { max-width: 900px; margin: 10px auto 40px; padding: 0 5%; }
+        .about-box p { font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 15px; text-align: left; }
+        .about-box .urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; direction: rtl; color: #222; text-align: right; }
+
+        /* Grid - 3 Columns on Mobile */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 8px;
+            padding: 0 4% 40px;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-container { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+        }
+
+        .item-card {
+            background: white; border-radius: 8px; padding: 6px; text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06); border: 1px solid #eee; 
+            display: flex; flex-direction: column;
+        }
+        .item-card img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 5px; background: #eee; min-height: 100px; }
+        .item-card h4 { font-size: 8px; margin: 4px 0; color: #111; height: 22px; overflow: hidden; line-height: 1.1; }
+        .btn-action { 
+            background: var(--deep-green); color: var(--gold); padding: 5px 0; 
+            font-size: 8px; border-radius: 4px; text-decoration: none; font-weight: bold;
+            border: 1px solid var(--gold); margin-top: auto;
+        }
+
+        /* Footer */
+        footer { 
+            background: var(--deep-green); 
+            color: var(--gold); 
+            padding: 25px 5% 15px; 
+            text-align: center; 
+            border-top: 3px solid var(--gold);
+        }
+        .contact-section {
+            display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 10px;
+        }
+        .contact-header {
+            background: linear-gradient(90deg, #1a4332, transparent);
+            color: var(--gold); padding: 5px 15px; border-left: 3px solid var(--gold); font-size: 11px; font-weight: bold; text-transform: uppercase;
+        }
+        .social-links { display: flex; gap: 10px; }
+        .social-item { 
+            width: 32px; height: 32px; border-radius: 50%; background: var(--gold); 
+            display: flex; align-items: center; justify-content: center; color: var(--deep-green); text-decoration: none; font-size: 15px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" style="color:var(--gold); text-decoration:none; font-weight:bold;">AZIZ-UL-MADARIS</a>
+        <a href="#" class="header-logo"><i class="fas fa-mosque"></i> AZIZ-UL-MADARIS</a>
         <nav>
-            <a href="#about">About</a>
+            <a href="#about">About Us</a>
             <a href="#library">Library</a>
             <a href="#courses">Courses</a>
             <a href="#ai">AI Tools</a>
+            <a href="#contact">Contact Us</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="logo-frame">
-            <h1>عزیز المدارس</h1>
-        </div>
-        <h2>AZIZ-UL-MADARIS</h2>
-
-        <div class="info-bar">
-            <div class="loc-text">
-                <i class="fas fa-map-marker-alt"></i>
-                Kotla Jam, Bhakkar, Punjab, Pakistan
-            </div>
-            <div class="mudir-text">
-                <i class="fas fa-user-circle"></i>
-                مدیر: مفتی ظفر اقبال صاحب
-            </div>
-        </div>
+        <div class="arabic-logo">عزیز المدارس</div>
+        <div class="english-title">Aziz-ul-Madaris</div>
     </section>
 
-    <!-- About Section -->
     <div id="about">
         <div class="section-header">About Us</div>
-        <div class="content"><p class="urdu-txt">اسلامی اقدار اور جدید تعلیمی مہارتوں کا سنگم، جو دونوں جہانوں میں کامیابی کا راستہ فراہم کرتا ہے۔</p></div>
+        <div class="about-box">
+            <p>Dedicated to Islamic values and modern academic excellence, providing a path to success in both worlds.</p>
+            <p class="urdu">اسلامی اقدار اور جدید تعلیمی مہارتوں کا سنگم، جو دونوں جہانوں میں کامیابی کا راستہ فراہم کرتا ہے۔</p>
+        </div>
     </div>
 
-    <!-- Library Section -->
     <div id="library">
         <div class="section-header">Digital Library</div>
-        <div class="content"><div class="grid">
-            <div class="card"><img src="https://via.placeholder.com/150x200/1a4332/white?text=Book"><a href="#" class="btn">Download</a></div>
-            <div class="card"><img src="https://via.placeholder.com/150x200/1a4332/white?text=Book"><a href="#" class="btn">Download</a></div>
-        </div></div>
+        <div class="grid-container">
+            <script>
+                for(let i=1; i<=6; i++) {
+                    document.write(`
+                    <div class="item-card">
+                        <img src="https://via.placeholder.com/150x200/1a4332/ffffff?text=Book" alt="Book">
+                        <h4>Islamic Book ${i}</h4>
+                        <a href="#" class="btn-action">Download</a>
+                    </div>
+                    `);
+                }
+            </script>
+        </div>
     </div>
 
-    <!-- Courses Section -->
-    <div id="courses">
-        <div class="section-header">Premium Courses</div>
-        <div class="content"><div class="grid">
-            <div class="card"><img src="https://via.placeholder.com/150x200/c5a059/black?text=Course"><a href="#" class="btn">Enroll Now</a></div>
-        </div></div>
-    </div>
+    <!-- Additional sections like Courses and AI Tools will go here as per previous design -->
 
-    <!-- AI Tools Section -->
-    <div id="ai">
-        <div class="section-header">AI Tools</div>
-        <div class="content"><div class="grid">
-            <div class="card"><img src="https://via.placeholder.com/150x200/333/gold?text=AI+Tool"><a href="#" class="btn">Access Tool</a></div>
-        </div></div>
-    </div>
-
-    <footer>
-        <p>© 2026 Aziz-ul-Madaris. All Rights Reserved.</p>
+    <footer id="contact">
+        <div class="footer-logo">
+            <i class="fas fa-mosque"></i>
+            <h3>عزیز المدارس</h3>
+            <p>Official Digital Platform</p>
+        </div>
+        <div class="contact-section">
+            <div class="contact-header">Contact Us</div>
+            <div class="social-links">
+                <a href="#" class="social-item"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </footer>
 
 </body>
