@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدرسہ جامعہ نور العلم | ڈیجیٹل لائبریری</title>
+    <title>Madrasa Jamia Noor-ul-Ilm | Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-green: #1a4332;
@@ -13,215 +14,260 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--light-bg);
             color: #333;
+            scroll-behavior: smooth;
         }
 
-        /* Header & Navigation */
+        /* Header */
         header {
             background-color: var(--primary-green);
             color: var(--white);
             padding: 20px 0;
             text-align: center;
             border-bottom: 4px solid var(--gold);
-        }
-
-        nav {
-            margin-top: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: var(--white);
             margin: 0 15px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 67, 50, 0.8), rgba(26, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('madrasa-main-bg.jpg'); /* Replace with your madrasa image */
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 10px;
+        .hero h1 { font-size: 3.5rem; color: var(--gold); margin: 0; }
+
+        /* Section Styling */
+        .section-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        /* Section Titles */
         .section-title {
             text-align: center;
-            margin: 50px 0 30px;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary-green);
-            position: relative;
+            margin-bottom: 40px;
+            text-transform: uppercase;
         }
 
         .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            margin: 10px auto;
+            content: ''; display: block; width: 100px; height: 4px; background: var(--gold); margin: 10px auto;
         }
 
-        /* Grid Layout for Library and Courses */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        /* 2-Column Grid for 20 Items (10 per side) */
+        .grid-20 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .card {
+        .item-card {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-        }
+        .item-card:hover { transform: scale(1.02); background: #fdfdfd; }
 
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
+        .item-info h4 { margin: 0; color: var(--primary-green); }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-green);
+        .btn-download {
+            background: var(--primary-green);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
             text-decoration: none;
-            margin-top: 10px;
-            transition: background 0.3s;
+            font-size: 12px;
         }
 
-        .btn:hover {
-            background-color: var(--gold);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 40px 20px;
+        /* Coming Soon */
+        .coming-soon {
+            background: var(--primary-green);
+            color: var(--gold);
             text-align: center;
+            padding: 100px 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        /* Social Buttons */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .wa { background: #25D366; }
+        .fb { background: #1877F2; }
+        .yt { background: #FF0000; }
+        .tk { background: #000000; }
+        .ig { background: #E4405F; }
+        .web { background: var(--gold); }
+
+        .social-btn:hover { opacity: 0.8; transform: translateY(-3px); }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
             margin-top: 50px;
         }
 
-        .social-links a {
-            color: var(--gold);
-            font-size: 24px;
-            margin: 0 10px;
-            text-decoration: none;
+        @media (max-width: 768px) {
+            .grid-20 { grid-template-columns: 1fr; }
+            .social-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>مدرسہ جامعہ نور العلم</h1>
         <nav>
-            <a href="#about">تعارف</a>
-            <a href="#library">کتب خانہ</a>
-            <a href="#courses">کورسز</a>
-            <a href="#contact">رابطہ</a>
+            <a href="#about">About</a>
+            <a href="#library">Digital Library</a>
+            <a href="#premium">Premium Courses</a>
+            <a href="#ai-tools">AI Tools</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>خوش آمدید</h1>
-        <p>نورِ علم سے اپنے مستقبل کو روشن کریں</p>
+        <h1>MADRASA JAMIA NOOR-UL-ILM</h1>
+        <p>Empowering the Ummah with Deen and Modern Skills</p>
     </section>
 
     <!-- About Section -->
-    <section id="about" style="text-align: center; padding: 50px 20px; background: white;">
-        <h2 class="section-title">مدرسے کا تعارف</h2>
-        <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
-            جامعہ نور العلم ایک ایسی درسگاہ ہے جہاں روایتی دینی علوم کے ساتھ ساتھ جدید ٹیکنالوجی اور اے آئی (AI) ٹولز کی تربیت بھی دی جاتی ہے تاکہ ہمارے طلبہ دین اور دنیا دونوں میں کامیاب ہو سکیں۔
-        </p>
-    </section>
-
-    <!-- Digital Library Section -->
-    <section id="library">
-        <h2 class="section-title">ڈیجیٹل لائبریری</h2>
-        <div class="container">
-            <div class="card">
-                <img src="https://via.placeholder.com/200x300?text=Book+1" alt="کتاب">
-                <h3>صحیح بخاری</h3>
-                <p>حدیث کی مستند ترین کتاب</p>
-                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/200x300?text=Book+2" alt="کتاب">
-                <h3>عادلانہ دفاع</h3>
-                <p>تالیف: مفتی محمد ظفر اقبال</p>
-                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/200x300?text=Book+3" alt="کتاب">
-                <h3>اسلامی فقہ</h3>
-                <p>بنیادی مسائل کا مجموعہ</p>
-                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
-            </div>
+    <div class="section-container" id="about">
+        <h2 class="section-title">About Our Madrasa</h2>
+        <div style="text-align: center; line-height: 1.8;">
+            <p>Welcome to Jamia Noor-ul-Ilm. We provide a balanced environment for Islamic studies and modern digital education.</p>
+            <img src="madrasa-about.jpg" alt="Madrasa Building" style="width:100%; max-width:800px; border-radius:15px; margin-top:20px;">
         </div>
-    </section>
+    </div>
 
-    <!-- Courses Section -->
-    <section id="courses" style="background-color: #f0f0f0; padding-bottom: 50px;">
-        <h2 class="section-title">جدید کورسز اور اے آئی ٹولز</h2>
-        <div class="container">
-            <div class="card">
-                <span style="font-size: 50px;">🤖</span>
-                <h3>اے آئی (AI) مہارت</h3>
-                <p>چیٹ جی پی ٹی اور دیگر ٹولز کا استعمال</p>
-                <a href="#" class="btn">تفصیل دیکھیں</a>
-            </div>
-            <div class="card">
-                <span style="font-size: 50px;">🎨</span>
-                <h3>گرافک ڈیزائننگ</h3>
-                <p>اعلیٰ درجے کے ڈیزائن بنانا سیکھیں</p>
-                <a href="#" class="btn">تفصیل دیکھیں</a>
-            </div>
-            <div class="card">
-                <span style="font-size: 50px;">📱</span>
-                <h3>سوشل میڈیا مارکیٹنگ</h3>
-                <p>دین کی دعوت کو عام کرنے کے طریقے</p>
-                <a href="#" class="btn">تفصیل دیکھیں</a>
-            </div>
+    <!-- Digital Library (20 Books) -->
+    <div class="section-container" id="library">
+        <h2 class="section-title">Digital Library</h2>
+        <div class="grid-20">
+            <!-- Generating 20 Placeholders -->
+            <script>
+                for(let i=1; i<=20; i++) {
+                    document.write(`
+                        <div class="item-card">
+                            <div class="item-info">
+                                <h4>Islamic Book Title ${i}</h4>
+                                <small>Author Name</small>
+                            </div>
+                            <a href="#" class="btn-download"><i class="fas fa-download"></i> PDF</a>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Footer -->
-    <footer id="contact">
-        <h3>رابطہ کریں</h3>
-        <p>پتہ: نالج وے، اسلام آباد، پاکستان</p>
-        <p>فون: 0123456789</p>
-        <div class="social-links">
-            <a href="#">Facebook</a> | <a href="#">YouTube</a> | <a href="#">WhatsApp</a>
+    <!-- Premium Courses (20 Slots) -->
+    <div class="section-container" id="premium">
+        <h2 class="section-title">Premium Courses</h2>
+        <div class="grid-20">
+            <script>
+                for(let i=1; i<=20; i++) {
+                    document.write(`
+                        <div class="item-card" style="border-left-color: #1a4332;">
+                            <div class="item-info">
+                                <h4>Premium Course ${i}</h4>
+                                <small>Certified Training</small>
+                            </div>
+                            <a href="#" class="btn-download">Enroll Now</a>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
-        <p style="margin-top: 20px; font-size: 12px;">&copy; 2026 مدرسہ جامعہ نور العلم۔ جملہ حقوق محفوظ ہیں۔</p>
+    </div>
+
+    <!-- AI Tools (20 Slots) -->
+    <div class="section-container" id="ai-tools">
+        <h2 class="section-title">AI & Digital Tools</h2>
+        <div class="grid-20">
+            <script>
+                for(let i=1; i<=20; i++) {
+                    document.write(`
+                        <div class="item-card">
+                            <div class="item-info">
+                                <h4>AI Tool Name ${i}</h4>
+                                <small>Helper Tool</small>
+                            </div>
+                            <a href="#" class="btn-download">Use Tool</a>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- Coming Soon -->
+    <div class="coming-soon">
+        COMING SOON
+    </div>
+
+    <!-- Contact Us -->
+    <div class="section-container" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="social-grid">
+            <a href="https://wa.me/yournumber" class="social-btn wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
+            <a href="https://facebook.com/yourpage" class="social-btn fb"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
+            <a href="https://youtube.com/yourchannel" class="social-btn yt"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
+            <a href="https://tiktok.com/@yourid" class="social-btn tk"><i class="fab fa-tiktok"></i>&nbsp; TikTok</a>
+            <a href="https://instagram.com/yourid" class="social-btn ig"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
+            <a href="mailto:your@email.com" class="social-btn web"><i class="fas fa-envelope"></i>&nbsp; Email Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Madrasa Jamia Noor-ul-Ilm. All Rights Reserved.</p>
     </footer>
 
 </body>
