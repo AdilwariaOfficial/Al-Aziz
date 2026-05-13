@@ -33,23 +33,6 @@
         nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(10, 46, 31, 0.75), rgba(10, 46, 31, 0.75)), 
-                        url('https://cdn.pixabay.com/photo/2017/09/01/14/53/mosque-2704515_1280.jpg');
-            background-size: cover; background-position: center;
-            height: 400px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            border-bottom: 5px solid var(--gold);
-        }
-        
-        .arabic-logo { 
-            font-family: 'Amiri', serif; font-size: clamp(3rem, 10vw, 5rem); color: var(--gold); 
-            border: 2px solid var(--gold); padding: 10px 40px; border-radius: 60px 60px 0 0; 
-            background: rgba(0,0,0,0.4); text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
-        }
-        .english-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 5vw, 1.8rem); color: white; letter-spacing: 3px; margin-top: 10px; }
 
         /* Section Styling */
         .section-header {
@@ -121,10 +104,61 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="arabic-logo">عزیز المدارس</div>
-        <div class="english-title">Aziz-ul-Madaris</div>
-    </section>
+    <style>
+    .hero {
+        position: relative;
+        background: radial-gradient(circle at center, #1a4332 0%, #0a2e1f 100%);
+        height: 420px;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+        border-bottom: 5px solid #c5a059;
+    }
+    .hero::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');
+        opacity: 0.1; pointer-events: none;
+    }
+    .logo-only-box { position: relative; z-index: 2; display: inline-block; }
+    .arch-wrap {
+        border: 3px solid #c5a059;
+        border-radius: 500px 500px 0 0;
+        padding: 25px 60px 15px;
+        border-bottom: 3px solid #c5a059;
+        margin-bottom: 18px;
+        display: inline-block;
+    }
+    .arabic-font { 
+        font-family: 'Amiri', serif; 
+        font-size: clamp(3.2rem, 13vw, 5.8rem); 
+        color: #c5a059; 
+        line-height: 1;
+    }
+    .english-font { 
+        font-family: 'Cinzel', serif; 
+        font-size: clamp(1.3rem, 5.5vw, 2.5rem); 
+        color: white; 
+        letter-spacing: 5px; 
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+    }
+    @media (max-width: 600px) {
+        .hero { height: 350px; }
+        .arch-wrap { padding: 15px 35px 10px; }
+    }
+</style>
+
+<section class="hero">
+    <div class="logo-only-box">
+        <div class="arch-wrap">
+            <div class="arabic-font">عزیز المدارس</div>
+        </div>
+        <div class="english-font">AZIZ-UL-MADARIS</div>
+    </div>
+</section>
+
 
     <div id="about">
         <div class="section-header">About Us / تعارف</div>
