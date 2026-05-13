@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Aziz-ul-Madaris | Official</title>
+    <title>Aziz-ul-Madaris | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Cinzel:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +16,6 @@
 
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--soft-bg); color: #333; overflow-x: hidden; }
 
-        /* Header */
         header {
             background-color: var(--deep-green);
             padding: 15px 5%;
@@ -33,14 +32,14 @@
         nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Updated Hero Section for hero-bg.png */
+        /* Hero Section Optimized for Laptop and Mobile */
         .hero {
             position: relative;
             background: url('hero-bg.png'); 
-            background-size: cover; 
+            background-size: 100% 100%; 
             background-position: center;
             background-repeat: no-repeat;
-            height: 500px; /* ڈیسک ٹاپ کے لیے بہترین ہائٹ */
+            height: 85vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -48,16 +47,14 @@
             border-bottom: 5px solid var(--gold);
         }
 
-        /* Responsive Settings for Mobile */
         @media (max-width: 768px) {
             .hero {
-                height: 300px; /* موبائل اسکرین کے مطابق ایڈجسٹمنٹ */
-                background-size: contain; /* تاکہ تصویر کا کوئی حصہ کٹے نہیں */
-                background-color: #0d3121; /* تصویر کے پیچھے ہم آہنگ رنگ */
+                height: 300px; 
+                background-size: contain;
+                background-color: #0d3121;
             }
         }
 
-        /* Section Styling */
         .section-header {
             background: linear-gradient(90deg, var(--deep-green), transparent);
             color: var(--gold); padding: 10px 20px; display: table;
@@ -69,7 +66,6 @@
         .about-box p { font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 15px; }
         .about-box .urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 20px; direction: rtl; color: #222; line-height: 2.2; }
 
-        /* Grid System */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -92,7 +88,6 @@
         }
         .btn-action:hover { background: var(--gold); color: var(--deep-green); }
 
-        /* Footer */
         footer { 
             background: var(--deep-green); color: var(--gold); 
             padding: 40px 5% 20px; text-align: center; border-top: 4px solid var(--gold);
@@ -127,7 +122,6 @@
         </nav>
     </header>
 
-    <!-- Updated Hero Section: Content is now inside the background image -->
     <section class="hero" id="home">
     </section>
 
@@ -139,7 +133,6 @@
         </div>
     </div>
 
-    <!-- Digital Library -->
     <div id="library">
         <div class="section-header">Digital Library / لائبریری</div>
         <div class="grid-container">
@@ -161,7 +154,6 @@
         </div>
     </div>
 
-    <!-- Courses -->
     <div id="courses">
         <div class="section-header">Our Courses / کورسز</div>
         <div class="grid-container">
@@ -178,7 +170,6 @@
         </div>
     </div>
 
-    <!-- AI Tools -->
     <div id="ai">
         <div class="section-header">Digital Tools / ٹولز</div>
         <div class="grid-container">
@@ -196,7 +187,6 @@
             <h3>عزیز المدارس</h3>
             <p>Official Digital Platform</p>
         </div>
-
         <div class="contact-section">
             <div class="contact-title">Contact Us</div>
             <div class="social-links">
