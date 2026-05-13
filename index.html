@@ -28,25 +28,35 @@
         }
         .header-logo { color: var(--gold); display: flex; align-items: center; text-decoration: none; font-size: 11px; font-weight: bold; }
         .header-logo i { font-size: 18px; margin-right: 5px; }
-        nav { display: flex; gap: 6px; }
-        nav a { color: var(--white); text-decoration: none; font-size: 8px; font-weight: 600; text-transform: uppercase; }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+        nav a { color: var(--white); text-decoration: none; font-size: 8px; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
 
-        /* Hero Section - Fixed Background Image */
+        /* Hero Section - High Quality Mosque Background */
         .hero {
-            background: linear-gradient(rgba(10, 46, 31, 0.8), rgba(10, 46, 31, 0.8)), 
-                        url('https://images.unsplash.com/photo-1590075865003-e4829d59f99c?auto=format&fit=crop&w=1200&q=80'); /* Beautiful Mosque Pattern */
-            background-size: cover; background-position: center; height: 350px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            border-bottom: 3px solid var(--gold);
+            position: relative;
+            background: linear-gradient(rgba(10, 46, 31, 0.7), rgba(10, 46, 31, 0.7)), 
+                        url('https://cdn.pixabay.com/photo/2017/09/01/14/53/mosque-2704515_1280.jpg'); /* New Reliable Mosque Image */
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            height: 380px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
         }
+        
         .arabic-logo { 
             font-family: 'Amiri', serif; font-size: clamp(2.5rem, 9vw, 4.5rem); color: var(--gold); 
             border: 2px solid var(--gold); padding: 8px 30px; border-radius: 50px 50px 0 0; 
-            background: rgba(0,0,0,0.4); text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.5); text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+            z-index: 2;
         }
-        .english-title { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 4vw, 1.6rem); color: white; letter-spacing: 2px; margin-top: 8px; }
+        .english-title { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 4vw, 1.6rem); color: white; letter-spacing: 2px; margin-top: 8px; z-index: 2; }
 
-        /* Left Aligned Section Headers */
+        /* Sections Styling */
         .section-header {
             background: linear-gradient(90deg, var(--deep-green), transparent);
             color: var(--gold);
@@ -59,9 +69,8 @@
             text-transform: uppercase;
         }
 
-        /* About Box */
-        .about-box { max-width: 900px; margin: 10px auto 40px; padding: 0 5%; text-align: left; }
-        .about-box p { font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 15px; }
+        .about-box { max-width: 900px; margin: 10px auto 40px; padding: 0 5%; }
+        .about-box p { font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 15px; text-align: left; }
         .about-box .urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; direction: rtl; color: #222; text-align: right; }
 
         /* Grid - 3 Columns on Mobile */
@@ -93,7 +102,7 @@
         footer { 
             background: var(--deep-green); 
             color: var(--gold); 
-            padding: 20px 5% 15px; 
+            padding: 25px 5% 15px; 
             text-align: center; 
             border-top: 3px solid var(--gold);
         }
@@ -101,35 +110,18 @@
         .footer-logo h3 { margin: 5px 0 0; font-family: 'Amiri', serif; font-size: 18px; }
         .footer-logo p { margin: 0 0 20px; font-size: 9px; color: #ccc; }
 
-        /* Contact Us Header in Footer */
         .contact-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
+            display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 10px;
         }
         .contact-header {
             background: linear-gradient(90deg, #1a4332, transparent);
-            color: var(--gold);
-            padding: 5px 15px;
-            border-left: 3px solid var(--gold);
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
+            color: var(--gold); padding: 5px 15px; border-left: 3px solid var(--gold); font-size: 11px; font-weight: bold; text-transform: uppercase;
         }
 
         .social-links { display: flex; gap: 10px; }
         .social-item { 
             width: 32px; height: 32px; border-radius: 50%; background: var(--gold); 
-            display: flex; align-items: center; justify-content: center; color: var(--deep-green); 
-            text-decoration: none; font-size: 15px;
-        }
-
-        @media (max-width: 400px) {
-            .grid-container { gap: 5px; }
-            .item-card h4 { font-size: 7px; }
+            display: flex; align-items: center; justify-content: center; color: var(--deep-green); text-decoration: none; font-size: 15px;
         }
     </style>
 </head>
@@ -142,6 +134,7 @@
             <a href="#library">Library</a>
             <a href="#courses">Courses</a>
             <a href="#ai">AI Tools</a>
+            <a href="#contact">Contact Us</a> <!-- Added Contact Us to Menu -->
         </nav>
     </header>
 
@@ -150,7 +143,6 @@
         <div class="english-title">Aziz-ul-Madaris</div>
     </section>
 
-    <!-- About Us Section -->
     <div id="about">
         <div class="section-header">About Us</div>
         <div class="about-box">
@@ -159,7 +151,6 @@
         </div>
     </div>
 
-    <!-- Library -->
     <div id="library">
         <div class="section-header">Digital Library</div>
         <div class="grid-container">
@@ -177,7 +168,6 @@
         </div>
     </div>
 
-    <!-- Courses -->
     <div id="courses">
         <div class="section-header">Premium Courses</div>
         <div class="grid-container">
@@ -195,7 +185,6 @@
         </div>
     </div>
 
-    <!-- AI Tools -->
     <div id="ai">
         <div class="section-header">AI & Digital Tools</div>
         <div class="grid-container">
@@ -213,7 +202,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer id="contact">
         <div class="footer-logo">
             <i class="fas fa-mosque"></i>
             <h3>عزیز المدارس</h3>
