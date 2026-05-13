@@ -3,55 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic AI - بک اسٹور</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>مدرسہ جامعہ نور العلم | ڈیجیٹل لائبریری</title>
+    <style>
+        :root {
+            --primary-green: #1a4332;
+            --gold: #c5a059;
+            --white: #ffffff;
+            --light-bg: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 67, 50, 0.8), rgba(26, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2rem;
+            color: var(--primary-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 10px auto;
+        }
+
+        /* Grid Layout for Library and Courses */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .social-links a {
+            color: var(--gold);
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <p>🚚 پورے پاکستان میں فری ڈیلیوری | 💬 واٹس ایپ 0328-6775001</p>
-    </div>
-
     <header>
-        <div class="container header-flex">
-            <div class="logo"><h1>Islamic AI</h1></div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-        </div>
+        <h1>مدرسہ جامعہ نور العلم</h1>
+        <nav>
+            <a href="#about">تعارف</a>
+            <a href="#library">کتب خانہ</a>
+            <a href="#courses">کورسز</a>
+            <a href="#contact">رابطہ</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <h2>اسلامی کتب کا بہترین مجموعہ</h2>
-        <p>قرآنی کتب | حدیث | دینی لٹریچر</p>
+        <h1>خوش آمدید</h1>
+        <p>نورِ علم سے اپنے مستقبل کو روشن کریں</p>
     </section>
 
-    <div class="filters">
-        <button class="filter-btn active" onclick="filterBooks('all')">سب بکس</button>
-        <button class="filter-btn" onclick="filterBooks('quran')">قرآن</button>
-        <button class="filter-btn" onclick="filterBooks('hadees')">حدیث</button>
-        <button class="filter-btn" onclick="filterBooks('fiqh')">فقہ</button>
-    </div>
+    <!-- About Section -->
+    <section id="about" style="text-align: center; padding: 50px 20px; background: white;">
+        <h2 class="section-title">مدرسے کا تعارف</h2>
+        <p style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+            جامعہ نور العلم ایک ایسی درسگاہ ہے جہاں روایتی دینی علوم کے ساتھ ساتھ جدید ٹیکنالوجی اور اے آئی (AI) ٹولز کی تربیت بھی دی جاتی ہے تاکہ ہمارے طلبہ دین اور دنیا دونوں میں کامیاب ہو سکیں۔
+        </p>
+    </section>
 
-    <main class="container">
-        <div id="books-grid" class="books-grid">
+    <!-- Digital Library Section -->
+    <section id="library">
+        <h2 class="section-title">ڈیجیٹل لائبریری</h2>
+        <div class="container">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300?text=Book+1" alt="کتاب">
+                <h3>صحیح بخاری</h3>
+                <p>حدیث کی مستند ترین کتاب</p>
+                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
             </div>
-    </main>
-
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3>آپ کی کارٹ</h3>
-            <span onclick="toggleCart()">&times;</span>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300?text=Book+2" alt="کتاب">
+                <h3>عادلانہ دفاع</h3>
+                <p>تالیف: مفتی محمد ظفر اقبال</p>
+                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300?text=Book+3" alt="کتاب">
+                <h3>اسلامی فقہ</h3>
+                <p>بنیادی مسائل کا مجموعہ</p>
+                <a href="#" class="btn">ڈاؤن لوڈ کریں</a>
+            </div>
         </div>
-        <div id="cart-items"></div>
-        <div class="cart-footer">
-            <h4 id="total-price">ٹوٹل: 0 روپے</h4>
-            <button class="whatsapp-btn" onclick="orderViaWhatsApp()">واٹس ایپ پر آرڈر کریں</button>
-        </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Courses Section -->
+    <section id="courses" style="background-color: #f0f0f0; padding-bottom: 50px;">
+        <h2 class="section-title">جدید کورسز اور اے آئی ٹولز</h2>
+        <div class="container">
+            <div class="card">
+                <span style="font-size: 50px;">🤖</span>
+                <h3>اے آئی (AI) مہارت</h3>
+                <p>چیٹ جی پی ٹی اور دیگر ٹولز کا استعمال</p>
+                <a href="#" class="btn">تفصیل دیکھیں</a>
+            </div>
+            <div class="card">
+                <span style="font-size: 50px;">🎨</span>
+                <h3>گرافک ڈیزائننگ</h3>
+                <p>اعلیٰ درجے کے ڈیزائن بنانا سیکھیں</p>
+                <a href="#" class="btn">تفصیل دیکھیں</a>
+            </div>
+            <div class="card">
+                <span style="font-size: 50px;">📱</span>
+                <h3>سوشل میڈیا مارکیٹنگ</h3>
+                <p>دین کی دعوت کو عام کرنے کے طریقے</p>
+                <a href="#" class="btn">تفصیل دیکھیں</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact">
+        <h3>رابطہ کریں</h3>
+        <p>پتہ: نالج وے، اسلام آباد، پاکستان</p>
+        <p>فون: 0123456789</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">YouTube</a> | <a href="#">WhatsApp</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px;">&copy; 2026 مدرسہ جامعہ نور العلم۔ جملہ حقوق محفوظ ہیں۔</p>
+    </footer>
+
 </body>
 </html>
