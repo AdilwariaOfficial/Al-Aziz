@@ -1,176 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madrasa Aziz-ul-Madaris | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <style>
         :root {
             --deep-green: #0a2e1f;
             --gold: #c5a059;
             --white: #ffffff;
-            --light-cream: #f9f7f2;
+            --soft-bg: #fdfcf9;
         }
 
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--white); color: #333; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--soft-bg); color: #333; overflow-x: hidden; }
 
-        /* Header Navigation */
+        /* VIP Header */
         header {
             background-color: var(--deep-green);
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid var(--gold);
             position: sticky; top: 0; z-index: 1000;
         }
-        .logo-placeholder { display: flex; align-items: center; color: var(--gold); font-weight: bold; text-decoration: none; }
-        .logo-placeholder i { font-size: 30px; margin-right: 10px; }
-        nav a { color: var(--white); margin-left: 20px; text-decoration: none; font-size: 13px; font-weight: 400; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
+        .header-logo { color: var(--gold); display: flex; align-items: center; text-decoration: none; font-size: 12px; font-weight: bold; }
+        .header-logo i { font-size: 20px; margin-right: 6px; }
+        nav { display: flex; gap: 8px; }
+        nav a { color: var(--white); text-decoration: none; font-size: 9px; font-weight: 600; text-transform: uppercase; }
 
-        /* Hero Section (Based on 75854.png) */
+        /* Hero Section with Mosque Background */
         .hero {
-            background: linear-gradient(rgba(10, 46, 31, 0.8), rgba(10, 46, 31, 0.8)), url('https://images.unsplash.com/photo-1590076215667-873d6f303457?auto=format&fit=crop&q=80');
-            background-size: cover; background-position: center;
-            height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+            background: linear-gradient(rgba(10, 46, 31, 0.75), rgba(10, 46, 31, 0.75)), 
+                        url('https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; height: 350px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        .hero .arabic-name { font-family: 'Amiri', serif; font-size: 4rem; color: var(--gold); margin: 0; }
-        .hero .english-name { font-size: 2.5rem; letter-spacing: 2px; margin-top: -10px; text-transform: uppercase; }
+        .arabic-logo { 
+            font-family: 'Amiri', serif; font-size: clamp(2.5rem, 9vw, 4.5rem); color: var(--gold); 
+            border: 2px solid var(--gold); padding: 10px 35px; border-radius: 50px 50px 0 0; 
+            background: rgba(0,0,0,0.3); text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        }
+        .english-title { font-family: 'Cinzel', serif; font-size: clamp(0.9rem, 4.5vw, 1.8rem); color: white; letter-spacing: 3px; margin-top: 10px; }
 
         /* About Section */
-        .about-section { max-width: 900px; margin: 50px auto; padding: 0 20px; text-align: center; line-height: 1.8; }
-        .about-text-en { font-size: 18px; margin-bottom: 20px; color: #444; }
-        .about-text-ur { font-family: 'Noto Nastaliq Urdu', serif; font-size: 20px; direction: rtl; color: #222; }
+        .about-box { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .about-box p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 15px; }
+        .about-box .urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; direction: rtl; color: #222; }
 
-        /* Content Sections */
-        .content-container { background-color: var(--light-cream); padding: 60px 5%; }
-        .section-title { text-align: center; font-size: 28px; color: var(--deep-green); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+        /* Left Aligned VIP Section Headers */
+        .section-header {
+            background: linear-gradient(90deg, var(--deep-green), transparent);
+            color: var(--gold);
+            padding: 8px 18px;
+            display: table;
+            margin: 30px 0 15px 5%;
+            border-left: 5px solid var(--gold);
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+        }
 
-        /* Grid Layout for Library & Courses */
-        .item-grid {
+        /* 3-Column Mobile Grid / 5-Column Desktop */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px; margin-bottom: 60px;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 8px;
+            padding: 0 4% 40px;
         }
-        .book-card {
-            background: white; border-radius: 10px; padding: 20px; text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee;
-        }
-        .book-card:hover { transform: translateY(-10px); }
-        .book-img { width: 100%; height: 280px; background: #ddd; border-radius: 5px; margin-bottom: 15px; object-fit: cover; }
-        .book-card h4 { margin: 10px 0; font-size: 16px; color: var(--deep-green); }
-        .download-btn {
-            background: var(--deep-green); color: white; padding: 10px 20px; border-radius: 5px;
-            text-decoration: none; font-size: 12px; display: inline-block; transition: 0.3s;
-        }
-        .download-btn:hover { background: var(--gold); }
 
-        /* Footer (Based on 75854.png) */
-        footer {
-            background-color: var(--deep-green); color: white; padding: 40px 5%;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+        @media (min-width: 1024px) {
+            .grid-container { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+            .section-header { font-size: 18px; }
+        }
+
+        /* Smart Card Design */
+        .item-card {
+            background: white; border-radius: 8px; padding: 6px; text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07); border: 1px solid #eee; 
+            display: flex; flex-direction: column; transition: 0.3s;
+        }
+        .item-card:hover { transform: translateY(-5px); }
+        .item-card img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 6px; }
+        .item-card h4 { font-size: 9px; margin: 4px 0; color: #111; height: 24px; overflow: hidden; line-height: 1.2; font-weight: 600; }
+        .btn-action { 
+            background: var(--deep-green); color: var(--gold); padding: 5px 0; 
+            font-size: 8px; border-radius: 4px; text-decoration: none; font-weight: bold;
+            border: 1px solid var(--gold); margin-top: auto;
+        }
+
+        /* Smart Compact Footer */
+        footer { 
+            background: var(--deep-green); 
+            color: var(--gold); 
+            padding: 25px 5% 15px; 
+            text-align: center; 
             border-top: 3px solid var(--gold);
         }
-        .footer-left { display: flex; align-items: center; }
-        .footer-left i { font-size: 40px; color: var(--gold); margin-right: 15px; }
-        .footer-info h3 { margin: 0; font-family: 'Amiri', serif; color: var(--gold); }
-        .footer-info p { margin: 0; font-size: 14px; text-transform: uppercase; }
+        .footer-logo i { font-size: 28px; margin-bottom: 5px; }
+        .footer-logo h3 { margin: 0; font-family: 'Amiri', serif; font-size: 20px; }
+        .footer-logo p { margin: 0; font-size: 10px; color: #ccc; margin-bottom: 20px; text-transform: uppercase; }
 
-        .footer-right { display: flex; gap: 15px; }
-        .social-circle {
-            width: 40px; height: 40px; border-radius: 50%; background: var(--gold);
-            display: flex; align-items: center; justify-content: center; color: var(--deep-green);
-            text-decoration: none; font-size: 18px; transition: 0.3s;
+        .contact-box { max-width: 250px; margin: 0 auto; text-align: left; }
+        .contact-label { font-size: 11px; color: var(--white); font-weight: bold; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+        
+        .social-links { display: flex; justify-content: center; gap: 12px; margin-top: 15px; }
+        .social-item { 
+            width: 35px; height: 35px; border-radius: 50%; background: var(--gold); 
+            display: flex; align-items: center; justify-content: center; color: var(--deep-green); 
+            text-decoration: none; font-size: 16px; transition: 0.3s;
         }
-        .social-circle:hover { background: white; transform: scale(1.1); }
+        .social-item:hover { background: white; transform: rotate(360deg); }
 
-        @media (max-width: 768px) {
-            .hero .arabic-name { font-size: 2.5rem; }
-            .hero .english-name { font-size: 1.5rem; }
-            footer { flex-direction: column; text-align: center; gap: 30px; }
-            .footer-left { flex-direction: column; }
+        @media (max-width: 480px) {
+            .grid-container { gap: 6px; }
+            .item-card { padding: 4px; }
+            .item-card h4 { font-size: 8px; height: 22px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <a href="#" class="logo-placeholder"><i class="fas fa-mosque"></i> AZIZ-UL-MADARIS</a>
+        <a href="#" class="header-logo"><i class="fas fa-mosque"></i> AZIZ-UL-MADARIS</a>
         <nav>
-            <a href="#about">About</a>
             <a href="#library">Library</a>
             <a href="#courses">Courses</a>
             <a href="#ai">AI Tools</a>
-            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- VIP Hero Section -->
     <section class="hero">
-        <h1 class="arabic-name">عزيز المدارس</h1>
-        <h2 class="english-name">Aziz-ul-Madaris</h2>
+        <div class="arabic-logo">عزیز المدارس</div>
+        <div class="english-title">Aziz-ul-Madaris</div>
     </section>
 
-    <div class="about-section" id="about">
-        <p class="about-text-en">Welcome to Madrasa Aziz-ul-Madaris, a place where traditional Islamic knowledge meets modern academic excellence. Our mission is to provide high-quality education and spiritual guidance to the next generation of scholars.</p>
-        <p class="about-text-ur">مدرسہ عزیز المدارس میں خوش آمدید، ایک ایسی درسگاہ جہاں روایتی اسلامی علوم اور جدید تعلیمی مہارتوں کا حسین امتزاج ملتا ہے۔ ہمارا مقصد علمائے کرام کی اگلی نسل کو بہترین تعلیم اور روحانی رہنمائی فراہم کرنا ہے۔</p>
+    <!-- About Section -->
+    <div class="about-box">
+        <p>Dedicated to Islamic values and modern academic excellence, providing a path to success in both worlds.</p>
+        <p class="urdu">اسلامی اقدار اور جدید تعلیمی مہارتوں کا سنگم، جو دونوں جہانوں میں کامیابی کا راستہ فراہم کرتا ہے۔</p>
     </div>
 
-    <div class="content-container">
-        <!-- Digital Library -->
-        <div id="library">
-            <h2 class="section-title">Digital Library</h2>
-            <div class="item-grid">
-                <script>
-                    for(let i=1; i<=4; i++) {
-                        document.write(`
-                        <div class="book-card">
-                            <img src="https://via.placeholder.com/200x280/1a4332/ffffff?text=Islamic+Book" class="book-img">
-                            <h4>Islamic Resource Title ${i}</h4>
-                            <a href="#" class="download-btn">Read / Download</a>
-                        </div>
-                        `);
-                    }
-                </script>
-            </div>
-        </div>
-
-        <!-- Courses -->
-        <div id="courses">
-            <h2 class="section-title">Modern Courses & AI Tools</h2>
-            <div class="item-grid">
-                <script>
-                    for(let i=1; i<=4; i++) {
-                        document.write(`
-                        <div class="book-card">
-                            <img src="https://via.placeholder.com/200x280/c5a059/ffffff?text=Modern+Course" class="book-img">
-                            <h4>Specialized Course ${i}</h4>
-                            <a href="#" class="download-btn" style="background:#444;">Learn More</a>
-                        </div>
-                        `);
-                    }
-                </script>
-            </div>
+    <!-- 1. Digital Library Section -->
+    <div id="library">
+        <div class="section-header">Digital Library</div>
+        <div class="grid-container">
+            <script>
+                for(let i=1; i<=6; i++) {
+                    document.write(`
+                    <div class="item-card">
+                        <img src="https://via.placeholder.com/150x200/0a2e1f/ffffff?text=Islamic+Book" alt="Book">
+                        <h4>Islamic Book ${i}</h4>
+                        <a href="#" class="btn-action">Download</a>
+                    </div>
+                    `);
+                }
+            </script>
         </div>
     </div>
 
-    <footer id="contact">
-        <div class="footer-left">
+    <!-- 2. Premium Courses Section -->
+    <div id="courses">
+        <div class="section-header">Premium Courses</div>
+        <div class="grid-container">
+            <script>
+                for(let i=1; i<=3; i++) {
+                    document.write(`
+                    <div class="item-card">
+                        <img src="https://via.placeholder.com/150x200/c5a059/000000?text=Course" alt="Course">
+                        <h4>Special Course ${i}</h4>
+                        <a href="#" class="btn-action">Enroll Now</a>
+                    </div>
+                    `);
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- 3. AI Tools Section -->
+    <div id="ai">
+        <div class="section-header">AI & Digital Tools</div>
+        <div class="grid-container">
+            <script>
+                for(let i=1; i<=3; i++) {
+                    document.write(`
+                    <div class="item-card">
+                        <img src="https://via.placeholder.com/150x200/333333/gold?text=AI+Tool" alt="AI Tool">
+                        <h4>AI Tool ${i}</h4>
+                        <a href="#" class="btn-action">Open Tool</a>
+                    </div>
+                    `);
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- VIP Smart Footer -->
+    <footer>
+        <div class="footer-logo">
             <i class="fas fa-mosque"></i>
-            <div class="footer-info">
-                <h3>عزيز المدارس</h3>
-                <p>Aziz-ul-Madaris</p>
+            <h3>عزیز المدارس</h3>
+            <p>Aziz-ul-Madaris Official</p>
+        </div>
+
+        <div class="contact-box">
+            <span class="contact-label">Contact Us:</span>
+            <div class="social-links">
+                <a href="#" class="social-item"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
-        <div class="footer-right">
-            <a href="#" class="social-circle"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-circle"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="social-circle"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-circle"><i class="fab fa-tiktok"></i></a>
-        </div>
+        <p style="font-size: 8px; color: #999; margin-top: 20px;">© 2026 Aziz-ul-Madaris. All Rights Reserved.</p>
     </footer>
 
 </body>
