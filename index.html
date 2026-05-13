@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrasa Jamia Noor-ul-Ilm | Official Website</title>
+    <title>Madrasa Aziz-ul-Madaris | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -15,8 +15,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--light-bg);
             color: #333;
             scroll-behavior: smooth;
@@ -26,138 +25,83 @@
         header {
             background-color: var(--primary-green);
             color: var(--white);
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
             border-bottom: 4px solid var(--gold);
             position: sticky;
-            top: 0;
-            z-index: 1000;
+            top: 0; z-index: 1000;
         }
 
         nav a {
             color: var(--white);
-            margin: 0 15px;
+            margin: 0 12px;
             text-decoration: none;
             font-weight: 600;
-            text-transform: uppercase;
             font-size: 14px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('madrasa-main-bg.jpg'); /* Replace with your madrasa image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('main-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
-        .hero h1 { font-size: 3.5rem; color: var(--gold); margin: 0; }
+        .hero h1 { font-size: 3rem; color: var(--gold); margin: 0; text-transform: uppercase; }
+        
+        .arabic-tag { font-size: 2rem; margin-top: 20px; font-family: 'Amiri', serif; color: #fff; }
+        .urdu-tag { font-size: 1.2rem; margin-top: 10px; color: var(--gold); font-family: 'Noto Nastaliq Urdu', serif; }
 
         /* Section Styling */
-        .section-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+        .section-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary-green); margin-bottom: 30px; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 10px auto; }
 
-        .section-title {
+        /* About Section Styles */
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-green);
-            margin-bottom: 40px;
-            text-transform: uppercase;
+            line-height: 1.8;
         }
+        .urdu-text { font-size: 1.1rem; margin-top: 20px; direction: rtl; }
 
-        .section-title::after {
-            content: ''; display: block; width: 100px; height: 4px; background: var(--gold); margin: 10px auto;
-        }
-
-        /* 2-Column Grid for 20 Items (10 per side) */
-        .grid-20 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
+        /* Grid for 20 Items */
+        .grid-20 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
         .item-card {
             background: white;
             padding: 15px;
             border-radius: 8px;
             border-left: 5px solid var(--gold);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
             justify-content: space-between;
             transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-
-        .item-card:hover { transform: scale(1.02); background: #fdfdfd; }
-
-        .item-info h4 { margin: 0; color: var(--primary-green); }
-
-        .btn-download {
-            background: var(--primary-green);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 12px;
-        }
+        .item-card:hover { transform: translateY(-3px); }
+        .btn-action { background: var(--primary-green); color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px; }
 
         /* Coming Soon */
-        .coming-soon {
-            background: var(--primary-green);
-            color: var(--gold);
-            text-align: center;
-            padding: 100px 20px;
-            font-size: 3rem;
-            font-weight: bold;
-            letter-spacing: 5px;
-        }
+        .coming-soon { background: var(--primary-green); color: var(--gold); text-align: center; padding: 60px 20px; font-size: 2.5rem; font-weight: bold; }
 
         /* Social Buttons */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 700px; margin: 0 auto; }
+        .social-btn { display: flex; align-items: center; justify-content: center; padding: 12px; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .wa { background: #25D366; } .fb { background: #1877F2; } .yt { background: #FF0000; }
+        .tk { background: #000000; } .ig { background: #E4405F; } .mail { background: var(--gold); }
 
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .wa { background: #25D366; }
-        .fb { background: #1877F2; }
-        .yt { background: #FF0000; }
-        .tk { background: #000000; }
-        .ig { background: #E4405F; }
-        .web { background: var(--gold); }
-
-        .social-btn:hover { opacity: 0.8; transform: translateY(-3px); }
-
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
+        footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
 
         @media (max-width: 768px) {
             .grid-20 { grid-template-columns: 1fr; }
             .social-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -166,108 +110,82 @@
     <header>
         <nav>
             <a href="#about">About</a>
-            <a href="#library">Digital Library</a>
-            <a href="#premium">Premium Courses</a>
-            <a href="#ai-tools">AI Tools</a>
+            <a href="#library">Library</a>
+            <a href="#premium">Courses</a>
+            <a href="#ai">AI Tools</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>MADRASA JAMIA NOOR-UL-ILM</h1>
-        <p>Empowering the Ummah with Deen and Modern Skills</p>
+        <h1>Madrasa Aziz-ul-Madaris</h1>
+        <div class="arabic-tag">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</div>
+        <div class="urdu-tag">تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے</div>
     </section>
 
     <!-- About Section -->
     <div class="section-container" id="about">
-        <h2 class="section-title">About Our Madrasa</h2>
-        <div style="text-align: center; line-height: 1.8;">
-            <p>Welcome to Jamia Noor-ul-Ilm. We provide a balanced environment for Islamic studies and modern digital education.</p>
-            <img src="madrasa-about.jpg" alt="Madrasa Building" style="width:100%; max-width:800px; border-radius:15px; margin-top:20px;">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-box">
+            <p><strong>English:</strong> Madrasa Aziz-ul-Madaris is a premier institution dedicated to preserving Islamic heritage while embracing modern educational tools. We aim to nurture a generation that is spiritually grounded and technologically proficient.</p>
+            <hr>
+            <p class="urdu-text"><strong>اردو:</strong> مدرسہ عزیز المدارس ایک مثالی درسگاہ ہے جہاں دینی علوم کے تحفظ کے ساتھ ساتھ جدید تعلیمی وسائل سے بھی استفادہ کیا جاتا ہے۔ ہمارا مقصد ایک ایسی نسل تیار کرنا ہے جو دینی اقدار پر کاربند ہو اور دورِ حاضر کے چیلنجز کا مقابلہ کرنے کے لیے جدید مہارتوں سے لیس ہو۔</p>
         </div>
     </div>
 
-    <!-- Digital Library (20 Books) -->
+    <!-- Library (20 Books) -->
     <div class="section-container" id="library">
         <h2 class="section-title">Digital Library</h2>
         <div class="grid-20">
-            <!-- Generating 20 Placeholders -->
             <script>
                 for(let i=1; i<=20; i++) {
-                    document.write(`
-                        <div class="item-card">
-                            <div class="item-info">
-                                <h4>Islamic Book Title ${i}</h4>
-                                <small>Author Name</small>
-                            </div>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> PDF</a>
-                        </div>
-                    `);
+                    document.write(`<div class="item-card"><div><h4>Book Title ${i}</h4><small>Islamic Resource</small></div><a href="#" class="btn-action">Download</a></div>`);
                 }
             </script>
         </div>
     </div>
 
-    <!-- Premium Courses (20 Slots) -->
+    <!-- Premium Courses (20) -->
     <div class="section-container" id="premium">
         <h2 class="section-title">Premium Courses</h2>
         <div class="grid-20">
             <script>
                 for(let i=1; i<=20; i++) {
-                    document.write(`
-                        <div class="item-card" style="border-left-color: #1a4332;">
-                            <div class="item-info">
-                                <h4>Premium Course ${i}</h4>
-                                <small>Certified Training</small>
-                            </div>
-                            <a href="#" class="btn-download">Enroll Now</a>
-                        </div>
-                    `);
+                    document.write(`<div class="item-card"><div><h4>Course Name ${i}</h4><small>Expert Training</small></div><a href="#" class="btn-action">Learn More</a></div>`);
                 }
             </script>
         </div>
     </div>
 
-    <!-- AI Tools (20 Slots) -->
-    <div class="section-container" id="ai-tools">
-        <h2 class="section-title">AI & Digital Tools</h2>
+    <!-- AI Tools (20) -->
+    <div class="section-container" id="ai">
+        <h2 class="section-title">AI Tools for Students</h2>
         <div class="grid-20">
             <script>
                 for(let i=1; i<=20; i++) {
-                    document.write(`
-                        <div class="item-card">
-                            <div class="item-info">
-                                <h4>AI Tool Name ${i}</h4>
-                                <small>Helper Tool</small>
-                            </div>
-                            <a href="#" class="btn-download">Use Tool</a>
-                        </div>
-                    `);
+                    document.write(`<div class="item-card"><div><h4>AI Tool ${i}</h4><small>Productivity</small></div><a href="#" class="btn-action">Open Tool</a></div>`);
                 }
             </script>
         </div>
     </div>
 
-    <!-- Coming Soon -->
-    <div class="coming-soon">
-        COMING SOON
-    </div>
+    <div class="coming-soon">COMING SOON</div>
 
-    <!-- Contact Us -->
+    <!-- Contact Section -->
     <div class="section-container" id="contact">
-        <h2 class="section-title">Contact Us</h2>
+        <h2 class="section-title">Connect With Us</h2>
         <div class="social-grid">
-            <a href="https://wa.me/yournumber" class="social-btn wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
-            <a href="https://facebook.com/yourpage" class="social-btn fb"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
-            <a href="https://youtube.com/yourchannel" class="social-btn yt"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
-            <a href="https://tiktok.com/@yourid" class="social-btn tk"><i class="fab fa-tiktok"></i>&nbsp; TikTok</a>
-            <a href="https://instagram.com/yourid" class="social-btn ig"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
-            <a href="mailto:your@email.com" class="social-btn web"><i class="fas fa-envelope"></i>&nbsp; Email Us</a>
+            <a href="#" class="social-btn wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
+            <a href="#" class="social-btn fb"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
+            <a href="#" class="social-btn yt"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
+            <a href="#" class="social-btn tk"><i class="fab fa-tiktok"></i>&nbsp; TikTok</a>
+            <a href="#" class="social-btn ig"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
+            <a href="#" class="social-btn mail"><i class="fas fa-envelope"></i>&nbsp; Email</a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Madrasa Jamia Noor-ul-Ilm. All Rights Reserved.</p>
+        <p>&copy; 2026 Madrasa Aziz-ul-Madaris. All Rights Reserved.</p>
     </footer>
 
 </body>
