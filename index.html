@@ -10,118 +10,118 @@
         :root { --deep-green: #0a2e1f; --gold: #c5a059; --white: #ffffff; }
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #fdfcf9; overflow-x: hidden; }
 
-        /* Header / Navbar */
+        /* Navbar */
         header {
-            background-color: var(--deep-green);
-            padding: 12px 5%;
+            background-color: var(--deep-green); padding: 12px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 2px solid var(--gold);
-            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
-        .header-logo { color: var(--gold); text-decoration: none; font-size: 14px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
-        nav { display: flex; gap: 12px; }
-        nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+        nav a { color: var(--white); text-decoration: none; font-size: 10px; font-weight: 600; margin-left: 10px; text-transform: uppercase; }
 
-        /* Hero Section (75935.png Design) */
+        /* Hero Section (Exactly like 75935.png) */
         .hero {
-            background-color: var(--deep-green);
-            height: 450px;
+            background-color: var(--deep-green); height: 500px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             position: relative; text-align: center;
-            background-image: radial-gradient(circle at 2px 2px, rgba(197, 160, 89, 0.15) 1px, transparent 0);
-            background-size: 30px 30px;
+            background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png'); /* Pattern like 75935.png */
         }
-        .main-logo-area { margin-bottom: 40px; }
-        .arabic-name { 
-            font-family: 'Amiri', serif; font-size: clamp(3rem, 10vw, 5rem); color: var(--gold); 
-            border: 3px solid var(--gold); padding: 10px 40px; border-radius: 100px 100px 0 0;
-            background: rgba(0,0,0,0.2); line-height: 1.2;
+        .logo-frame {
+            border: 3px solid var(--gold); border-bottom: none;
+            border-radius: 150px 150px 0 0; padding: 20px 50px;
+            background: rgba(0,0,0,0.1); display: inline-block;
         }
-        .english-name { font-family: 'Cinzel', serif; font-size: clamp(1rem, 5vw, 2.2rem); color: white; letter-spacing: 3px; margin-top: 10px; }
+        .hero h1 { font-family: 'Amiri', serif; font-size: 70px; color: var(--gold); margin: 0; line-height: 1; }
+        .hero h2 { font-family: 'Cinzel', serif; font-size: 30px; color: white; margin: 10px 0 0; letter-spacing: 4px; }
 
-        /* The Capsule Info Bar (As per 75935.png) */
-        .info-capsule {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(197, 160, 89, 0.5);
-            border-radius: 50px;
+        /* Glossy Info Bar (75935.png Style) */
+        .info-bar {
+            position: absolute; bottom: 40px; width: 90%; max-width: 900px;
+            background: linear-gradient(to bottom, #111, #000);
+            border: 1px solid #333; border-radius: 50px;
             display: flex; justify-content: space-between; align-items: center;
-            width: 90%; max-width: 800px;
-            padding: 12px 25px;
-            position: absolute; bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 10px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
-        .info-item { display: flex; align-items: center; gap: 10px; color: white; font-size: clamp(10px, 2.5vw, 14px); }
-        .info-item i { color: var(--gold); font-size: 18px; }
-        .urdu-mudir { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; color: var(--gold); }
+        .loc-text { color: white; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .loc-text i { color: var(--gold); }
+        .mudir-text { font-family: 'Noto Nastaliq Urdu', serif; color: var(--gold); font-size: 16px; display: flex; align-items: center; gap: 10px; direction: rtl; }
+        .mudir-text i { color: white; font-size: 20px; }
 
-        /* Lower Sections (Kept the same) */
-        .section-header {
-            background: linear-gradient(90deg, var(--deep-green), transparent);
-            color: var(--gold); padding: 10px 20px; display: table; margin: 40px 0 20px 5%;
-            border-left: 5px solid var(--gold); font-weight: bold;
-        }
-        .content-box { padding: 0 5% 40px; }
-        .urdu-p { font-family: 'Noto Nastaliq Urdu', serif; font-size: 20px; text-align: right; line-height: 2; }
+        /* Sections */
+        .section-header { background: linear-gradient(90deg, var(--deep-green), transparent); color: var(--gold); padding: 10px 20px; margin: 40px 0 20px 5%; border-left: 5px solid var(--gold); font-weight: bold; }
+        .content { padding: 0 5% 40px; }
+        .urdu-txt { font-family: 'Noto Nastaliq Urdu', serif; font-size: 18px; text-align: right; line-height: 2; }
+        
+        /* Grids for Library, Courses, AI */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+        .btn { background: var(--deep-green); color: var(--gold); text-decoration: none; padding: 8px; border-radius: 5px; display: block; font-size: 12px; border: 1px solid var(--gold); margin-top: 5px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; }
-        .card { background: white; border-radius: 10px; padding: 10px; text-align: center; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
-        .btn { background: var(--deep-green); color: var(--gold); text-decoration: none; font-size: 10px; padding: 6px 12px; border-radius: 5px; display: block; border: 1px solid var(--gold); }
-
-        footer { background: var(--deep-green); color: var(--gold); padding: 30px 5%; text-align: center; border-top: 3px solid var(--gold); }
+        footer { background: var(--deep-green); color: var(--gold); padding: 30px; text-align: center; border-top: 3px solid var(--gold); }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="header-logo"><i class="fas fa-mosque"></i> AZIZ-UL-MADARIS</a>
+        <a href="#" style="color:var(--gold); text-decoration:none; font-weight:bold;">AZIZ-UL-MADARIS</a>
         <nav>
             <a href="#about">About</a>
             <a href="#library">Library</a>
             <a href="#courses">Courses</a>
-            <a href="#contact">Contact</a>
+            <a href="#ai">AI Tools</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="main-logo-area">
-            <div class="arabic-name">عزیز المدارس</div>
-            <div class="english-name">AZIZ-UL-MADARIS</div>
+        <div class="logo-frame">
+            <h1>عزیز المدارس</h1>
         </div>
+        <h2>AZIZ-UL-MADARIS</h2>
 
-        <!-- Info Bar from 75935.png -->
-        <div class="info-capsule">
-            <div class="info-item">
+        <div class="info-bar">
+            <div class="loc-text">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Kotla Jam, Bhakkar, Punjab, Pakistan</span>
+                Kotla Jam, Bhakkar, Punjab, Pakistan
             </div>
-            <div class="info-item urdu-mudir">
-                <span style="color: white; margin-left: 10px;"><i class="fas fa-user-circle"></i></span>
+            <div class="mudir-text">
+                <i class="fas fa-user-circle"></i>
                 مدیر: مفتی ظفر اقبال صاحب
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <div id="about">
         <div class="section-header">About Us</div>
-        <div class="content-box">
-            <p class="urdu-p">اسلامی اقدار اور جدید تعلیمی مہارتوں کا سنگم، جو دونوں جہانوں میں کامیابی کا راستہ فراہم کرتا ہے۔</p>
-        </div>
+        <div class="content"><p class="urdu-txt">اسلامی اقدار اور جدید تعلیمی مہارتوں کا سنگم، جو دونوں جہانوں میں کامیابی کا راستہ فراہم کرتا ہے۔</p></div>
     </div>
 
+    <!-- Library Section -->
     <div id="library">
         <div class="section-header">Digital Library</div>
-        <div class="content-box">
-            <div class="grid">
-                <!-- Books Cards -->
-                <div class="card"><img src="https://via.placeholder.com/100x140"><p style="font-size:10px">Book 1</p><a href="#" class="btn">Download</a></div>
-                <div class="card"><img src="https://via.placeholder.com/100x140"><p style="font-size:10px">Book 2</p><a href="#" class="btn">Download</a></div>
-                <div class="card"><img src="https://via.placeholder.com/100x140"><p style="font-size:10px">Book 3</p><a href="#" class="btn">Download</a></div>
-            </div>
-        </div>
+        <div class="content"><div class="grid">
+            <div class="card"><img src="https://via.placeholder.com/150x200/1a4332/white?text=Book"><a href="#" class="btn">Download</a></div>
+            <div class="card"><img src="https://via.placeholder.com/150x200/1a4332/white?text=Book"><a href="#" class="btn">Download</a></div>
+        </div></div>
     </div>
 
-    <footer id="contact">
+    <!-- Courses Section -->
+    <div id="courses">
+        <div class="section-header">Premium Courses</div>
+        <div class="content"><div class="grid">
+            <div class="card"><img src="https://via.placeholder.com/150x200/c5a059/black?text=Course"><a href="#" class="btn">Enroll Now</a></div>
+        </div></div>
+    </div>
+
+    <!-- AI Tools Section -->
+    <div id="ai">
+        <div class="section-header">AI Tools</div>
+        <div class="content"><div class="grid">
+            <div class="card"><img src="https://via.placeholder.com/150x200/333/gold?text=AI+Tool"><a href="#" class="btn">Access Tool</a></div>
+        </div></div>
+    </div>
+
+    <footer>
         <p>© 2026 Aziz-ul-Madaris. All Rights Reserved.</p>
     </footer>
 
