@@ -3,105 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aziz-ul-Madaris | Official</title>
+    <title>Madrasa Aziz-ul-Madaris | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-green: #1a4332;
             --gold: #c5a059;
             --white: #ffffff;
-            --light-bg: #f4f7f6;
+            --dark-gray: #333;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0; padding: 0;
-            background-color: var(--light-bg);
-            color: #333;
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; scroll-behavior: smooth; }
 
-        /* Header */
-        header {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 15px 0;
-            text-align: center;
-            border-bottom: 4px solid var(--gold);
-            position: sticky;
-            top: 0; z-index: 1000;
-        }
-
-        nav a {
-            color: var(--white);
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-        }
+        /* Navigation */
+        header { background-color: var(--primary-green); padding: 15px 0; text-align: center; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        nav a { color: var(--white); margin: 0 10px; text-decoration: none; font-weight: 600; font-size: 12px; text-transform: uppercase; }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('main-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        .hero { background-color: var(--dark-gray); color: white; padding: 50px 15px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .hero h1 { font-size: clamp(1.4rem, 5vw, 2.5rem); color: var(--gold); margin: 0; white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; }
+        .arabic-tag { font-size: clamp(1.1rem, 4vw, 1.8rem); margin: 15px 0 5px; font-family: 'Amiri', serif; white-space: nowrap; }
+        .urdu-tag { font-size: clamp(0.8rem, 3.5vw, 1.1rem); color: var(--gold); font-family: 'Noto Nastaliq Urdu', serif; white-space: nowrap; }
+
+        /* Section Header Style from 75694.jpg */
+        .section-header {
+            display: flex; align-items: center; margin: 30px 0 20px; padding-left: 15px;
+            border-left: 5px solid #2196F3; /* Blue indicator as in image */
+        }
+        .section-header h2 { font-size: 1.5rem; color: var(--primary-green); margin: 0; padding-left: 10px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        /* Grid Layout (2 Columns) */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
-        .hero h1 { font-size: 3rem; color: var(--gold); margin: 0; text-transform: uppercase; }
-        
-        .arabic-tag { font-size: 2rem; margin-top: 20px; font-family: 'Amiri', serif; color: #fff; }
-        .urdu-tag { font-size: 1.2rem; margin-top: 10px; color: var(--gold); font-family: 'Noto Nastaliq Urdu', serif; }
-
-        /* Section Styling */
-        .section-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary-green); margin-bottom: 30px; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 10px auto; }
-
-        /* About Section Styles */
-        .about-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            line-height: 1.8;
-        }
-        .urdu-text { font-size: 1.1rem; margin-top: 20px; direction: rtl; }
-
-        /* Grid for 20 Items */
-        .grid-20 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .item-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 5px solid var(--gold);
+        /* Card Design from 75694.jpg */
+        .app-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            transition: 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .item-card:hover { transform: translateY(-3px); }
-        .btn-action { background: var(--primary-green); color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px; }
+        .img-placeholder {
+            width: 60px; height: 60px; background: #eee; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center; margin-right: 12px;
+        }
+        .app-info { flex: 1; }
+        .app-info h4 { margin: 0; font-size: 14px; color: #333; }
+        .app-info p { margin: 2px 0 8px; font-size: 11px; color: #777; }
+        .dl-btn {
+            background: #2e7d32; color: white; padding: 6px 15px; border-radius: 6px;
+            text-decoration: none; font-size: 12px; font-weight: bold; display: inline-block;
+        }
 
-        /* Coming Soon */
-        .coming-soon { background: var(--primary-green); color: var(--gold); text-align: center; padding: 60px 20px; font-size: 2.5rem; font-weight: bold; }
-
-        /* Social Buttons */
-        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 700px; margin: 0 auto; }
-        .social-btn { display: flex; align-items: center; justify-content: center; padding: 12px; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        /* About & Socials */
+        .about-card { background: white; padding: 25px; border-radius: 15px; text-align: center; margin: 20px 0; border: 1px solid #ddd; }
+        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+        .s-btn { padding: 12px; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 13px; text-align: center; }
         .wa { background: #25D366; } .fb { background: #1877F2; } .yt { background: #FF0000; }
-        .tk { background: #000000; } .ig { background: #E4405F; } .mail { background: var(--gold); }
+        .tk { background: #000; } .ig { background: #E4405F; } .mail { background: var(--gold); }
 
-        footer { background: #111; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 20px; font-size: 11px; margin-top: 40px; }
 
-        @media (max-width: 768px) {
-            .grid-20 { grid-template-columns: 1fr; }
+        @media (max-width: 600px) {
+            nav a { margin: 0 4px; font-size: 10px; }
             .social-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -111,7 +84,7 @@
         <nav>
             <a href="#about">About</a>
             <a href="#library">Library</a>
-            <a href="#premium">Courses</a>
+            <a href="#courses">Courses</a>
             <a href="#ai">AI Tools</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -123,64 +96,88 @@
         <div class="urdu-tag">تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے</div>
     </section>
 
-    <!-- About Section -->
-    <div class="section-container" id="about">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-box">
-            <p><strong>English:</strong> Madrasa Aziz-ul-Madaris is a premier institution dedicated to preserving Islamic heritage while embracing modern educational tools. We aim to nurture a generation that is spiritually grounded and technologically proficient.</p>
-            <hr>
-            <p class="urdu-text"><strong>اردو:</strong> مدرسہ عزیز المدارس ایک مثالی درسگاہ ہے جہاں دینی علوم کے تحفظ کے ساتھ ساتھ جدید تعلیمی وسائل سے بھی استفادہ کیا جاتا ہے۔ ہمارا مقصد ایک ایسی نسل تیار کرنا ہے جو دینی اقدار پر کاربند ہو اور دورِ حاضر کے چیلنجز کا مقابلہ کرنے کے لیے جدید مہارتوں سے لیس ہو۔</p>
+    <div class="container">
+        <!-- About Section -->
+        <div id="about" class="about-card">
+            <h2 style="color: var(--primary-green);">About Us</h2>
+            <p><strong>English:</strong> Dedicated to Islamic values and modern excellence.</p>
+            <p style="direction: rtl; border-top: 1px solid #eee; padding-top: 10px;"><strong>اردو:</strong> اسلامی اقدار اور جدید مہارتوں کا سنگم۔</p>
         </div>
-    </div>
 
-    <!-- Library (20 Books) -->
-    <div class="section-container" id="library">
-        <h2 class="section-title">Digital Library</h2>
-        <div class="grid-20">
-            <script>
-                for(let i=1; i<=20; i++) {
-                    document.write(`<div class="item-card"><div><h4>Book Title ${i}</h4><small>Islamic Resource</small></div><a href="#" class="btn-action">Download</a></div>`);
-                }
-            </script>
+        <!-- Library Section -->
+        <div id="library">
+            <div class="section-header"><h2><i class="fas fa-book"></i> Digital Library</h2></div>
+            <div class="grid-layout">
+                <script>
+                    for(let i=1; i<=20; i++){
+                        document.write(`
+                            <div class="app-card">
+                                <div class="img-placeholder"><i class="fas fa-file-pdf" style="color:#ccc;"></i></div>
+                                <div class="app-info">
+                                    <h4>Book Title ${i}</h4>
+                                    <p>Islamic PDF</p>
+                                    <a href="#" class="dl-btn">Download</a>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
         </div>
-    </div>
 
-    <!-- Premium Courses (20) -->
-    <div class="section-container" id="premium">
-        <h2 class="section-title">Premium Courses</h2>
-        <div class="grid-20">
-            <script>
-                for(let i=1; i<=20; i++) {
-                    document.write(`<div class="item-card"><div><h4>Course Name ${i}</h4><small>Expert Training</small></div><a href="#" class="btn-action">Learn More</a></div>`);
-                }
-            </script>
+        <!-- Courses Section -->
+        <div id="courses">
+            <div class="section-header"><h2><i class="fas fa-graduation-cap"></i> Premium Courses</h2></div>
+            <div class="grid-layout">
+                <script>
+                    for(let i=1; i<=20; i++){
+                        document.write(`
+                            <div class="app-card">
+                                <div class="img-placeholder"><i class="fas fa-play-circle" style="color:#ccc;"></i></div>
+                                <div class="app-info">
+                                    <h4>Course ${i}</h4>
+                                    <p>Certified</p>
+                                    <a href="#" class="dl-btn" style="background:#1976D2;">Enroll</a>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
         </div>
-    </div>
 
-    <!-- AI Tools (20) -->
-    <div class="section-container" id="ai">
-        <h2 class="section-title">AI Tools for Students</h2>
-        <div class="grid-20">
-            <script>
-                for(let i=1; i<=20; i++) {
-                    document.write(`<div class="item-card"><div><h4>AI Tool ${i}</h4><small>Productivity</small></div><a href="#" class="btn-action">Open Tool</a></div>`);
-                }
-            </script>
+        <!-- AI Tools Section -->
+        <div id="ai">
+            <div class="section-header"><h2><i class="fas fa-robot"></i> AI Tools</h2></div>
+            <div class="grid-layout">
+                <script>
+                    for(let i=1; i<=20; i++){
+                        document.write(`
+                            <div class="app-card">
+                                <div class="img-placeholder"><i class="fas fa-microchip" style="color:#ccc;"></i></div>
+                                <div class="app-info">
+                                    <h4>AI Tool ${i}</h4>
+                                    <p>Helper</p>
+                                    <a href="#" class="dl-btn" style="background:#555;">Open</a>
+                                </div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
         </div>
-    </div>
 
-    <div class="coming-soon">COMING SOON</div>
-
-    <!-- Contact Section -->
-    <div class="section-container" id="contact">
-        <h2 class="section-title">Connect With Us</h2>
-        <div class="social-grid">
-            <a href="#" class="social-btn wa"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
-            <a href="#" class="social-btn fb"><i class="fab fa-facebook"></i>&nbsp; Facebook</a>
-            <a href="#" class="social-btn yt"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
-            <a href="#" class="social-btn tk"><i class="fab fa-tiktok"></i>&nbsp; TikTok</a>
-            <a href="#" class="social-btn ig"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
-            <a href="#" class="social-btn mail"><i class="fas fa-envelope"></i>&nbsp; Email</a>
+        <!-- Contact Section -->
+        <div id="contact">
+            <div class="section-header"><h2><i class="fas fa-phone-alt"></i> Contact Us</h2></div>
+            <div class="social-grid">
+                <a href="#" class="s-btn wa">WhatsApp</a>
+                <a href="#" class="s-btn fb">Facebook</a>
+                <a href="#" class="s-btn yt">YouTube</a>
+                <a href="#" class="s-btn tk">TikTok</a>
+                <a href="#" class="s-btn ig">Instagram</a>
+                <a href="#" class="s-btn mail">Email</a>
+            </div>
         </div>
     </div>
 
